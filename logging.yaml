@@ -1,0 +1,38 @@
+version: 1
+formatters:
+  simple:
+    format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: simple
+    stream: ext://sys.stdout
+loggers:
+  ClientSocket:
+    level: DEBUG
+    handlers: [console]
+    propagate: no
+  ServerSocket:
+    level: DEBUG
+    handlers: [console]
+    propagate: yes
+  ClientLasGo:
+    level: DEBUG
+    handlers: [console]
+    propagate: no
+  ClientDCX:
+    level: DEBUG
+    handlers: [console]
+    propagate: no
+  ClientSpec:
+    level: DEBUG
+    handlers: [console]
+    propagate: no
+  ClientFocus:
+    level: DEBUG
+    handlers: [console]
+    propagate: no
+root:
+  level: DEBUG
+  handlers: [console]
